@@ -63,8 +63,9 @@ export default function WeddingInvitationPage() {
   useEffect(() => {
     const updateCountdown = () => {
       const now = new Date();
-
-      const nextEvent = EVENTS.find((event) => event.date.getTime() > now.getTime());
+      const nextEvent = EVENTS.find(
+        (event) => event.date.getTime() > now.getTime()
+      );
 
       if (!nextEvent) {
         setCountdown({
@@ -160,188 +161,202 @@ export default function WeddingInvitationPage() {
           </div>
         </section>
       ) : (
-        <section className="flex min-h-screen items-center justify-center bg-[radial-gradient(circle_at_top_right,rgba(220,231,220,0.95),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(214,193,154,0.25),transparent_34%),#f4efe7] px-3 py-3">
-          <div className="invitation-card relative w-full max-w-[1180px] overflow-hidden rounded-[26px] border border-[#d6c19a]/50 bg-[#fffdf7]/95 shadow-[0_28px_80px_rgba(63,67,54,0.16)]">
-            <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#dce7dc]/70 blur-sm"></div>
-            <div className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-[#f2eadb]/70 blur-sm"></div>
+        <section className="min-h-screen bg-[radial-gradient(circle_at_top_right,rgba(220,231,220,0.95),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(214,193,154,0.25),transparent_34%),#f4efe7] px-3 py-5">
+          <div className="mx-auto w-full max-w-[1280px]">
+            <div className="invitation-card relative w-full overflow-hidden rounded-[26px] border border-[#d6c19a]/50 bg-[#fffdf7]/95 shadow-[0_28px_80px_rgba(63,67,54,0.16)]">
+              <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#dce7dc]/70 blur-sm"></div>
+              <div className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-[#f2eadb]/70 blur-sm"></div>
 
-            <div className="relative z-10 grid w-full grid-cols-1 gap-4 p-4 lg:grid-cols-[0.92fr_1.08fr] lg:gap-5 lg:p-5">
-              {/* Left Panel */}
-              <div className="rounded-[24px] border border-[#d6c19a]/45 bg-white/55 px-5 py-5 text-center">
-                <div className="mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full border border-[#5f7464]/20 bg-white p-2 shadow-sm">
-                  <Image
-                    src="/logo.png"
-                    alt="Wedding logo"
-                    width={60}
-                    height={60}
-                    className="h-full w-full object-contain"
-                    priority
-                  />
-                </div>
+              <div className="relative z-10 grid w-full grid-cols-1 gap-4 p-4 xl:grid-cols-[0.9fr_1.1fr] xl:gap-5 xl:p-5">
+                {/* Left Panel */}
+                <div className="rounded-[24px] border border-[#d6c19a]/45 bg-white/55 px-5 py-5 text-center">
+                  <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-[#5f7464]/20 bg-white p-2 shadow-sm">
+                    <Image
+                      src="/logo.png"
+                      alt="Wedding logo"
+                      width={56}
+                      height={56}
+                      className="h-full w-full object-contain"
+                      priority
+                    />
+                  </div>
 
-                <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.28em] text-[#7d8a7a]">
-                  Together With Our Families
-                </p>
-
-                <div className="mb-3 text-[28px] leading-none text-[#3e4236] sm:text-[34px]">
-                  بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-                </div>
-
-                <p className="mx-auto mb-5 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide sm:text-sm">
-                  “In the name of Allah,
-                  <br />
-                  the most gracious & the most merciful”
-                </p>
-
-                <p className="mx-auto mb-4 max-w-[430px] text-xs font-bold uppercase leading-6 tracking-wide sm:text-sm">
-                  We are inviting you to celebrate the wedding ceremony of
-                </p>
-
-                <h2
-                  className="mx-auto max-w-[430px] text-[34px] leading-[1.02] text-[#43463d] sm:text-[42px] lg:text-[48px]"
-                  style={{ fontFamily: '"Great Vibes", cursive' }}
-                >
-                  Marufa Yeasmin Misu
-                </h2>
-
-                <p className="mt-2 text-[11px] font-extrabold uppercase tracking-wide sm:text-xs">
-                  Youngest daughter of Md. Mokbul Hossain
-                </p>
-
-                <div className="my-3 text-[34px] text-[#5f7464]">&</div>
-
-                <h2
-                  className="mx-auto max-w-[430px] text-[34px] leading-[1.02] text-[#43463d] sm:text-[42px] lg:text-[48px]"
-                  style={{ fontFamily: '"Great Vibes", cursive' }}
-                >
-                  Md Taufik Hasan Tusher
-                </h2>
-
-                <p className="mt-2 text-[11px] font-extrabold uppercase tracking-wide sm:text-xs">
-                  Elder son of A.H.M Saiful Islam
-                </p>
-
-                <div className="mt-5 rounded-2xl border border-[#d6c19a]/35 bg-[#f8f5ef] px-4 py-3">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#7d8a7a]">
-                    Warm Invitation
+                  <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.28em] text-[#7d8a7a]">
+                    Together With Our Families
                   </p>
-                  <p className="mt-1 text-sm font-medium leading-6 text-[#5a5f52]">
-                    Your presence will make our celebration more joyful and memorable.
+
+                  <div className="mb-3 text-[27px] leading-none text-[#3e4236] sm:text-[32px]">
+                    بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+                  </div>
+
+                  <p className="mx-auto mb-4 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
+                    “In the name of Allah,
+                    <br />
+                    the most gracious & the most merciful”
                   </p>
-                </div>
-              </div>
 
-              {/* Right Panel */}
-              <div className="flex flex-col justify-between rounded-[24px] border border-[#d6c19a]/35 bg-[#fffdf8]/60 px-4 py-4">
-                <div>
-                  <div className="mb-3 text-center">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#7d8a7a]">
-                      Celebration Details
+                  <p className="mx-auto mb-3 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
+                    We are inviting you to celebrate the wedding ceremony of
+                  </p>
+
+                  <h2
+                    className="name-text mx-auto max-w-full text-[30px] leading-[1.08] text-[#43463d] sm:text-[36px] xl:whitespace-nowrap xl:text-[40px]"
+                    style={{ fontFamily: '"Great Vibes", cursive' }}
+                  >
+                    Marufa Yeasmin Misu
+                  </h2>
+
+                  <p className="mt-2 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
+                    Youngest daughter of Md. Mokbul Hossain
+                  </p>
+
+                  <div className="my-2 text-[30px] text-[#5f7464]">&</div>
+
+                  <h2
+                    className="name-text mx-auto max-w-full text-[28px] leading-[1.08] text-[#43463d] sm:text-[34px] xl:whitespace-nowrap xl:text-[38px]"
+                    style={{ fontFamily: '"Great Vibes", cursive' }}
+                  >
+                    Md Taufik Hasan Tusher
+                  </h2>
+
+                  <p className="mt-2 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
+                    Elder son of A.H.M Saiful Islam
+                  </p>
+
+                  <div className="mt-4 rounded-2xl border border-[#d6c19a]/35 bg-[#f8f5ef] px-4 py-3">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#7d8a7a]">
+                      Warm Invitation
                     </p>
-                    <h3 className="mt-1 text-2xl font-semibold text-[#3e4236] sm:text-3xl">
-                      Wedding & Reception
-                    </h3>
-                  </div>
-
-                  <div className="space-y-3">
-                    {EVENTS.map((event) => (
-                      <div
-                        key={event.key}
-                        className="rounded-[22px] border border-[#d6c19a]/40 bg-white/70 p-4 shadow-[0_10px_30px_rgba(63,67,54,0.06)]"
-                      >
-                        <div className="flex flex-wrap items-start justify-between gap-3">
-                          <div>
-                            <span
-                              className={`inline-flex rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] ${
-                                event.key === "wedding"
-                                  ? "bg-[#edf3eb] text-[#5f7464]"
-                                  : "bg-[#f7efe6] text-[#8b6c54]"
-                              }`}
-                            >
-                              {event.badge}
-                            </span>
-
-                            <h4 className="mt-3 text-lg font-extrabold text-[#3e4236] sm:text-xl">
-                              {event.title}
-                            </h4>
-
-                            <p className="mt-1 text-sm font-bold uppercase tracking-wide text-[#5f7464]">
-                              {event.dayText} • {event.dateText} • {event.timeText}
-                            </p>
-                          </div>
-
-                          <a
-                            href={event.mapUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-full bg-[#5f7464] px-4 py-2 text-xs font-bold text-white shadow-[0_10px_24px_rgba(95,116,100,0.22)] transition hover:-translate-y-0.5"
-                          >
-                            Open Map
-                          </a>
-                        </div>
-
-                        <div className="mt-3 rounded-2xl bg-[#faf8f3] px-4 py-3">
-                          <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#7d8a7a]">
-                            Venue
-                          </p>
-                          <p className="mt-1 text-sm font-extrabold uppercase leading-6 text-[#3e4236] sm:text-base">
-                            {event.venueLine1}
-                          </p>
-                          {event.venueLine2 ? (
-                            <p className="mt-1 text-sm font-semibold leading-6 text-[#5d6156]">
-                              {event.venueLine2}
-                            </p>
-                          ) : null}
-                        </div>
-                      </div>
-                    ))}
+                    <p className="mt-1 text-sm font-medium leading-6 text-[#5a5f52]">
+                      Your presence will make our celebration more joyful and memorable.
+                    </p>
                   </div>
                 </div>
 
-                <div className="mt-4">
-                  <div className="rounded-[22px] border border-[#c8d4c7]/60 bg-[#e8efe6] px-4 py-4 text-center">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#667566]">
-                      {countdown.label}
-                    </p>
-                    <p className="mt-2 text-xl font-extrabold text-[#536a58] sm:text-2xl">
-                      {countdown.value}
-                    </p>
-                  </div>
-
-                  <div className="mt-4 grid gap-3 md:grid-cols-[1fr_auto] md:items-center">
-                    <div className="text-center md:text-left">
-                      <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#7d8a7a]">
-                        RSVP
+                {/* Right Panel */}
+                <div className="flex flex-col justify-between rounded-[24px] border border-[#d6c19a]/35 bg-[#fffdf8]/60 px-4 py-4">
+                  <div>
+                    <div className="mb-3 text-center">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#7d8a7a]">
+                        Celebration Details
                       </p>
-                      <a
-                        href="tel:+8801701030436"
-                        className="mt-1 inline-block text-lg font-extrabold text-[#3e4236] no-underline"
-                      >
-                        +8801701030436
-                      </a>
+                      <h3 className="mt-1 text-2xl font-semibold text-[#3e4236] sm:text-3xl">
+                        Wedding & Reception
+                      </h3>
                     </div>
 
-                    <div className="flex flex-wrap justify-center gap-3 md:justify-end">
-                      <button
-                        type="button"
-                        onClick={handleShare}
-                        className="rounded-full bg-[#5f7464] px-5 py-2.5 text-xs font-bold text-white shadow-[0_12px_26px_rgba(95,116,100,0.28)] transition hover:-translate-y-1 sm:text-sm"
-                      >
-                        {copied ? "Copied!" : "Share"}
-                      </button>
+                    <div className="space-y-3">
+                      {EVENTS.map((event) => (
+                        <div
+                          key={event.key}
+                          className="rounded-[22px] border border-[#d6c19a]/40 bg-white/70 p-4 shadow-[0_10px_30px_rgba(63,67,54,0.06)]"
+                        >
+                          <div className="flex flex-wrap items-start justify-between gap-3">
+                            <div>
+                              <span
+                                className={`inline-flex rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] ${
+                                  event.key === "wedding"
+                                    ? "bg-[#edf3eb] text-[#5f7464]"
+                                    : "bg-[#f7efe6] text-[#8b6c54]"
+                                }`}
+                              >
+                                {event.badge}
+                              </span>
 
-                      <button
-                        type="button"
-                        onClick={() => setOpened(false)}
-                        className="rounded-full border border-[#5f7464]/30 bg-white px-5 py-2.5 text-xs font-bold text-[#5f7464] transition hover:-translate-y-1 sm:text-sm"
-                      >
-                        Close
-                      </button>
+                              <h4 className="mt-3 text-lg font-extrabold text-[#3e4236] sm:text-xl">
+                                {event.title}
+                              </h4>
+
+                              <p className="mt-1 text-sm font-bold uppercase tracking-wide text-[#5f7464]">
+                                {event.dayText} • {event.dateText} • {event.timeText}
+                              </p>
+                            </div>
+
+                            <a
+                              href={event.mapUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="rounded-full bg-[#5f7464] px-4 py-2 text-xs font-bold text-white shadow-[0_10px_24px_rgba(95,116,100,0.22)] transition hover:-translate-y-0.5"
+                            >
+                              Open Map
+                            </a>
+                          </div>
+
+                          <div className="mt-3 rounded-2xl bg-[#faf8f3] px-4 py-3">
+                            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#7d8a7a]">
+                              Venue
+                            </p>
+                            <p className="mt-1 text-sm font-extrabold uppercase leading-6 text-[#3e4236] sm:text-base">
+                              {event.venueLine1}
+                            </p>
+                            {event.venueLine2 ? (
+                              <p className="mt-1 text-sm font-semibold leading-6 text-[#5d6156]">
+                                {event.venueLine2}
+                              </p>
+                            ) : null}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <div className="rounded-[22px] border border-[#c8d4c7]/60 bg-[#e8efe6] px-4 py-4 text-center">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#667566]">
+                        {countdown.label}
+                      </p>
+                      <p className="mt-2 text-xl font-extrabold text-[#536a58] sm:text-2xl">
+                        {countdown.value}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 grid gap-3 md:grid-cols-[1fr_auto] md:items-center">
+                      <div className="text-center md:text-left">
+                        <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#7d8a7a]">
+                          RSVP
+                        </p>
+                        <a
+                          href="tel:+8801701030436"
+                          className="mt-1 inline-block text-lg font-extrabold text-[#3e4236] no-underline"
+                        >
+                          +8801701030436
+                        </a>
+                      </div>
+
+                      <div className="flex flex-wrap justify-center gap-3 md:justify-end">
+                        <button
+                          type="button"
+                          onClick={handleShare}
+                          className="rounded-full bg-[#5f7464] px-5 py-2.5 text-xs font-bold text-white shadow-[0_12px_26px_rgba(95,116,100,0.28)] transition hover:-translate-y-1 sm:text-sm"
+                        >
+                          {copied ? "Copied!" : "Share"}
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => setOpened(false)}
+                          className="rounded-full border border-[#5f7464]/30 bg-white px-5 py-2.5 text-xs font-bold text-[#5f7464] transition hover:-translate-y-1 sm:text-sm"
+                        >
+                          Close
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <footer className="mt-4 rounded-2xl border border-[#d6c19a]/40 bg-[#e7e2d8]/70 px-5 py-3 text-center text-xs font-semibold text-[#5d6156] shadow-sm">
+              Developed by:{" "}
+              <a
+                href="https://github.com/SajjadHossainSoykot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-extrabold text-[#5f7464] underline underline-offset-4 transition hover:text-[#3e4236]"
+              >
+                Sajjad Hossain Soykot
+              </a>
+            </footer>
           </div>
         </section>
       )}
