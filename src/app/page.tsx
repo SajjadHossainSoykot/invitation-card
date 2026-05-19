@@ -35,8 +35,8 @@ const EVENTS: EventInfo[] = [
     dayText: "Saturday",
     dateText: "30 May 2026",
     timeText: "11:30 AM",
-    venueLine1: "Quince Restaurant, Kanaikhali, Natore",
-    venueLine2: "2nd Floor Convention Hall",
+    venueLine1: "Quince Restaurant",
+    venueLine2: "2nd Floor Convention Hall, Kanaikhali, Natore",
     mapUrl: "https://maps.app.goo.gl/Y7oV3teYAVHfGu5u5?g_st=ac",
   },
   {
@@ -47,7 +47,7 @@ const EVENTS: EventInfo[] = [
     badge: "Reception",
     dayText: "Sunday",
     dateText: "31 May 2026",
-    timeText: "12:00 AM",
+    timeText: "11:30 AM",
     venueLine1: "Kazi Community Center",
     venueLine2: "Adjacent to SP Bridge (West Bank of the Korotoa River), Bogura",
     mapUrl: "https://maps.app.goo.gl/UaN3F7TVrznrdT9g7",
@@ -153,11 +153,6 @@ export default function WeddingInvitationPage() {
                     />
                   </div>
 
-                  <p className="mt-2 text-[11px] font-semibold leading-5 text-[#5f7464] max-[420px]:text-[10px] max-[420px]:leading-4">
-                    You are warmly invited to celebrate a beautiful new
-                    beginning of
-                  </p>
-
                   <p
                     className="mt-1 text-[28px] leading-none text-[#5f7464] max-[420px]:text-[24px]"
                     style={{ fontFamily: '"Great Vibes", cursive' }}
@@ -184,41 +179,41 @@ export default function WeddingInvitationPage() {
         </section>
       ) : (
         <>
-          <section className="flex min-h-screen items-center bg-[radial-gradient(circle_at_top_right,rgba(220,231,220,0.95),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(214,193,154,0.25),transparent_34%),#f4efe7] px-3 py-5">
+          <section className="flex min-h-screen items-center bg-[radial-gradient(circle_at_top_right,rgba(220,231,220,0.95),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(214,193,154,0.25),transparent_34%),#f4efe7] px-3 py-3">
             <div className="mx-auto w-full max-w-[1280px]">
               <div className="invitation-card relative w-full overflow-hidden rounded-[26px] border border-[#d6c19a]/50 bg-[#fffdf7]/95 shadow-[0_28px_80px_rgba(63,67,54,0.16)]">
                 <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#dce7dc]/70 blur-sm"></div>
                 <div className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-[#f2eadb]/70 blur-sm"></div>
 
-                <div className="relative z-10 grid w-full grid-cols-1 gap-4 p-4 xl:grid-cols-[0.9fr_1.1fr] xl:gap-5 xl:p-5">
+                <div className="relative z-10 grid w-full grid-cols-1 gap-3 p-3 xl:grid-cols-[0.9fr_1.1fr] xl:gap-4 xl:p-4">
                   {/* Left Panel */}
-                  <div className="left-panel relative flex flex-col justify-center overflow-hidden rounded-[24px] border border-[#d6c19a]/45 bg-white/55 px-5 py-6 text-center xl:min-h-[calc(100vh-90px)]">
-                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-[#5f7464]/20 bg-white p-2 shadow-sm">
+                  <div className="left-panel relative flex flex-col justify-center overflow-hidden rounded-[24px] border border-[#d6c19a]/45 bg-white/55 px-5 py-5 text-center xl:min-h-[calc(100vh-72px)]">
+                    <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#5f7464]/20 bg-white p-2 shadow-sm">
                       <Image
                         src="/logo.png"
                         alt="Wedding logo"
-                        width={56}
-                        height={56}
+                        width={50}
+                        height={50}
                         className="h-full w-full object-contain"
                         priority
                       />
                     </div>
 
-                    <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.28em] text-[#7d8a7a]">
+                    <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.28em] text-[#7d8a7a]">
                       Together With Our Families
                     </p>
 
-                    <div className="mb-3 text-[27px] leading-none text-[#3e4236] sm:text-[32px]">
+                    <div className="mb-2 text-[25px] leading-none text-[#3e4236] sm:text-[30px]">
                       بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
                     </div>
 
-                    <p className="mx-auto mb-5 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
+                    <p className="mx-auto mb-4 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
                       “In the name of Allah,
                       <br />
                       the most gracious & the most merciful”
                     </p>
 
-                    <p className="mx-auto mb-4 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
+                    <p className="mx-auto mb-3 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
                       We are inviting you to celebrate the wedding ceremony of
                     </p>
 
@@ -229,11 +224,11 @@ export default function WeddingInvitationPage() {
                       Marufa Yeasmin Misu
                     </h2>
 
-                    <p className="mt-2 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
+                    <p className="mt-1.5 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
                       Youngest daughter of Md. Mokbul Hossain
                     </p>
 
-                    <div className="my-3 text-[30px] text-[#5f7464]">&</div>
+                    <div className="my-2 text-[28px] text-[#5f7464]">&</div>
 
                     <h2
                       className="name-text mx-auto max-w-full text-[28px] leading-[1.08] text-[#43463d] sm:text-[34px] xl:whitespace-nowrap xl:text-[38px]"
@@ -242,11 +237,11 @@ export default function WeddingInvitationPage() {
                       Md Taufik Hasan Tusher
                     </h2>
 
-                    <p className="mt-2 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
+                    <p className="mt-1.5 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
                       Elder son of A.H.M Saiful Islam
                     </p>
 
-                    <div className="mx-auto mt-8 w-full max-w-[520px] rounded-2xl border border-[#d6c19a]/35 bg-[#f8f5ef]/90 px-4 py-4">
+                    <div className="mx-auto mt-6 w-full max-w-[520px] rounded-2xl border border-[#d6c19a]/35 bg-[#f8f5ef]/90 px-4 py-3">
                       <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#7d8a7a]">
                         Warm Invitation
                       </p>
@@ -258,12 +253,12 @@ export default function WeddingInvitationPage() {
                   </div>
 
                   {/* Right Panel */}
-                  <div className="right-panel flex flex-col justify-center rounded-[24px] border border-[#d6c19a]/35 bg-[#fffdf8]/60 px-4 py-4 xl:min-h-[calc(100vh-90px)]">
+                  <div className="right-panel flex flex-col justify-center rounded-[24px] border border-[#d6c19a]/35 bg-[#fffdf8]/60 px-3 py-3 xl:min-h-[calc(100vh-72px)]">
                     <div className="mb-3 text-center">
                       <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#7d8a7a]">
                         Celebration Details
                       </p>
-                      <h3 className="mt-1 text-2xl font-semibold text-[#3e4236] sm:text-3xl">
+                      <h3 className="mt-1 text-xl font-semibold text-[#3e4236] sm:text-2xl xl:text-[28px]">
                         Wedding & Reception
                       </h3>
                     </div>
@@ -272,7 +267,7 @@ export default function WeddingInvitationPage() {
                       {EVENTS.map((event) => (
                         <div
                           key={event.key}
-                          className="rounded-[22px] border border-[#d6c19a]/40 bg-white/70 p-4 shadow-[0_10px_30px_rgba(63,67,54,0.06)]"
+                          className="rounded-[20px] border border-[#d6c19a]/40 bg-white/70 p-3 shadow-[0_10px_30px_rgba(63,67,54,0.06)]"
                         >
                           <div className="flex flex-wrap items-start justify-between gap-3">
                             <div>
@@ -286,11 +281,11 @@ export default function WeddingInvitationPage() {
                                 {event.badge}
                               </span>
 
-                              <h4 className="mt-3 text-lg font-extrabold text-[#3e4236] sm:text-xl">
+                              <h4 className="mt-2 text-base font-extrabold text-[#3e4236] sm:text-lg">
                                 {event.title}
                               </h4>
 
-                              <div className="mt-2 flex flex-wrap gap-3 text-sm font-bold uppercase tracking-wide text-[#5f7464]">
+                              <div className="mt-1.5 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-wide text-[#5f7464] sm:text-sm">
                                 <span className="inline-flex items-center gap-1.5">
                                   <CalendarDays size={15} strokeWidth={2.2} />
                                   {event.dayText}, {event.dateText}
@@ -314,18 +309,18 @@ export default function WeddingInvitationPage() {
                             </a>
                           </div>
 
-                          <div className="mt-3 rounded-2xl bg-[#faf8f3] px-4 py-3">
+                          <div className="mt-2.5 rounded-2xl bg-[#faf8f3] px-3 py-2.5">
                             <p className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-[#7d8a7a]">
                               <MapPin size={13} strokeWidth={2.3} />
                               Venue
                             </p>
 
-                            <p className="mt-1 text-sm font-extrabold uppercase leading-6 text-[#3e4236] sm:text-base">
+                            <p className="mt-1 text-xs font-extrabold uppercase leading-5 text-[#3e4236] sm:text-sm">
                               {event.venueLine1}
                             </p>
 
                             {event.venueLine2 ? (
-                              <p className="mt-1 text-sm font-semibold leading-6 text-[#5d6156]">
+                              <p className="mt-1 text-xs font-semibold leading-5 text-[#5d6156] sm:text-sm">
                                 {event.venueLine2}
                               </p>
                             ) : null}
@@ -334,18 +329,18 @@ export default function WeddingInvitationPage() {
                       ))}
                     </div>
 
-                    <div className="mt-4 rounded-[22px] border border-[#c8d4c7]/60 bg-[#e8efe6] px-4 py-4 text-center">
+                    <div className="mt-3 rounded-[20px] border border-[#c8d4c7]/60 bg-[#e8efe6] px-4 py-3 text-center">
                       <p className="inline-flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.28em] text-[#667566]">
                         <Timer size={14} strokeWidth={2.3} />
                         {countdown.label}
                       </p>
 
-                      <p className="mt-2 text-xl font-extrabold text-[#536a58] sm:text-2xl">
+                      <p className="mt-1.5 text-lg font-extrabold text-[#536a58] sm:text-xl xl:text-2xl">
                         {countdown.value}
                       </p>
                     </div>
 
-                    <div className="mt-4 grid gap-3 md:grid-cols-[1fr_auto] md:items-center">
+                    <div className="mt-3 grid gap-2 md:grid-cols-[1fr_auto] md:items-center">
                       <div className="text-center md:text-left">
                         <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#7d8a7a]">
                           RSVP
@@ -353,7 +348,7 @@ export default function WeddingInvitationPage() {
 
                         <a
                           href="tel:+8801701030436"
-                          className="mt-1 inline-block text-lg font-extrabold text-[#3e4236] no-underline"
+                          className="mt-1 inline-block text-base font-extrabold text-[#3e4236] no-underline sm:text-lg"
                         >
                           +8801701030436
                         </a>
