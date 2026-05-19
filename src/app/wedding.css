@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.envelope-body::before,
+.envelope-body::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 52%;
+  height: 100%;
+  background: rgba(214, 193, 154, 0.28);
+}
+
+.envelope-body::before {
+  left: 0;
+  clip-path: polygon(0 0, 100% 52%, 0 100%);
+}
+
+.envelope-body::after {
+  right: 0;
+  clip-path: polygon(100% 0, 0 52%, 100% 100%);
+}
+
+.envelope-flap {
+  clip-path: polygon(0 0, 50% 70%, 100% 0);
+  transform-origin: top;
+}
+
+.group:hover .envelope-flap {
+  transform: rotateX(35deg);
+}
+
+.envelope-letter {
+  animation: floatLetter 2.4s ease-in-out infinite;
+}
+
+@keyframes floatLetter {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
