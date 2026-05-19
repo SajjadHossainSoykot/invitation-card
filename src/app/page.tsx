@@ -2,6 +2,16 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import {
+  CalendarDays,
+  Clock,
+  Heart,
+  MapPin,
+  Navigation,
+  Phone,
+  Share2,
+  X,
+} from "lucide-react";
 import "./wedding.css";
 
 type EventInfo = {
@@ -131,23 +141,35 @@ export default function WeddingInvitationPage() {
               aria-label="Open wedding invitation"
               className="group mx-auto block border-0 bg-transparent p-0"
             >
-              <div className="envelope relative mx-auto h-[190px] w-[290px] transition duration-300 group-hover:-translate-y-2 group-hover:scale-[1.03] max-[420px]:h-[170px] max-[420px]:w-[250px]">
-                <div className="envelope-letter absolute left-[35px] right-[35px] top-0 z-[2] flex h-[145px] items-center justify-center rounded-2xl border border-[#d6c19a]/80 bg-[#fffdf7] shadow-lg max-[420px]:left-[28px] max-[420px]:right-[28px] max-[420px]:h-[130px]">
-                  <div className="flex h-[90px] w-[90px] items-center justify-center rounded-full border border-[#5f7464]/50 bg-white/90 p-3 shadow-sm max-[420px]:h-[74px] max-[420px]:w-[74px]">
+              <div className="envelope relative mx-auto h-[210px] w-[310px] transition duration-300 group-hover:-translate-y-2 group-hover:scale-[1.03] max-[420px]:h-[180px] max-[420px]:w-[260px]">
+                <div className="envelope-letter absolute left-[35px] right-[35px] top-0 z-[2] flex h-[165px] flex-col items-center justify-center rounded-2xl border border-[#d6c19a]/80 bg-[#fffdf7] shadow-lg max-[420px]:left-[28px] max-[420px]:right-[28px] max-[420px]:h-[142px]">
+                  <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full border border-[#5f7464]/50 bg-white/90 p-2 shadow-sm max-[420px]:h-[64px] max-[420px]:w-[64px]">
                     <Image
                       src="/logo.png"
                       alt="Wedding logo"
-                      width={90}
-                      height={90}
+                      width={74}
+                      height={74}
                       className="h-full w-full object-contain"
                       priority
                     />
                   </div>
+
+                  <p
+                    className="mt-2 text-[28px] leading-none text-[#5f7464] max-[420px]:text-[23px]"
+                    style={{ fontFamily: '"Great Vibes", cursive' }}
+                  >
+                    Misu & Tusher
+                  </p>
+
+                  <p className="mt-1 flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.24em] text-[#8b927f]">
+                    <Heart size={12} />
+                    Open Invitation
+                  </p>
                 </div>
 
-                <div className="envelope-body absolute inset-x-0 bottom-0 top-[45px] overflow-hidden rounded-b-[20px] border-2 border-[#5f7464]/30 bg-gradient-to-br from-[#eef5ee] to-white shadow-[0_18px_40px_rgba(63,67,54,0.2)]"></div>
+                <div className="envelope-body absolute inset-x-0 bottom-0 top-[52px] overflow-hidden rounded-b-[20px] border-2 border-[#5f7464]/30 bg-gradient-to-br from-[#eef5ee] to-white shadow-[0_18px_40px_rgba(63,67,54,0.2)]"></div>
 
-                <div className="envelope-flap absolute inset-x-0 top-[45px] z-[3] h-[118px] border-2 border-[#5f7464]/30 bg-[#dfeadf] transition duration-500"></div>
+                <div className="envelope-flap absolute inset-x-0 top-[52px] z-[3] h-[126px] border-2 border-[#5f7464]/30 bg-[#dfeadf] transition duration-500"></div>
               </div>
             </button>
 
@@ -169,66 +191,83 @@ export default function WeddingInvitationPage() {
 
               <div className="relative z-10 grid w-full grid-cols-1 gap-4 p-4 xl:grid-cols-[0.9fr_1.1fr] xl:gap-5 xl:p-5">
                 {/* Left Panel */}
-                <div className="rounded-[24px] border border-[#d6c19a]/45 bg-white/55 px-5 py-5 text-center">
-                  <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-[#5f7464]/20 bg-white p-2 shadow-sm">
-                    <Image
-                      src="/logo.png"
-                      alt="Wedding logo"
-                      width={56}
-                      height={56}
-                      className="h-full w-full object-contain"
-                      priority
-                    />
-                  </div>
+                <div className="left-panel relative flex min-h-[700px] flex-col justify-between overflow-hidden rounded-[24px] border border-[#d6c19a]/45 bg-white/55 px-5 py-5 text-center xl:min-h-[760px]">
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f8f1e5] to-transparent opacity-80"></div>
 
-                  <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.28em] text-[#7d8a7a]">
-                    Together With Our Families
-                  </p>
+                  <div className="relative z-10">
+                    <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full border border-[#5f7464]/20 bg-white p-2 shadow-sm">
+                      <Image
+                        src="/logo.png"
+                        alt="Wedding logo"
+                        width={56}
+                        height={56}
+                        className="h-full w-full object-contain"
+                        priority
+                      />
+                    </div>
 
-                  <div className="mb-3 text-[27px] leading-none text-[#3e4236] sm:text-[32px]">
-                    بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-                  </div>
-
-                  <p className="mx-auto mb-4 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
-                    “In the name of Allah,
-                    <br />
-                    the most gracious & the most merciful”
-                  </p>
-
-                  <p className="mx-auto mb-3 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
-                    We are inviting you to celebrate the wedding ceremony of
-                  </p>
-
-                  <h2
-                    className="name-text mx-auto max-w-full text-[30px] leading-[1.08] text-[#43463d] sm:text-[36px] xl:whitespace-nowrap xl:text-[40px]"
-                    style={{ fontFamily: '"Great Vibes", cursive' }}
-                  >
-                    Marufa Yeasmin Misu
-                  </h2>
-
-                  <p className="mt-2 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
-                    Youngest daughter of Md. Mokbul Hossain
-                  </p>
-
-                  <div className="my-2 text-[30px] text-[#5f7464]">&</div>
-
-                  <h2
-                    className="name-text mx-auto max-w-full text-[28px] leading-[1.08] text-[#43463d] sm:text-[34px] xl:whitespace-nowrap xl:text-[38px]"
-                    style={{ fontFamily: '"Great Vibes", cursive' }}
-                  >
-                    Md Taufik Hasan Tusher
-                  </h2>
-
-                  <p className="mt-2 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
-                    Elder son of A.H.M Saiful Islam
-                  </p>
-
-                  <div className="mt-4 rounded-2xl border border-[#d6c19a]/35 bg-[#f8f5ef] px-4 py-3">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#7d8a7a]">
-                      Warm Invitation
+                    <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.28em] text-[#7d8a7a]">
+                      Together With Our Families
                     </p>
-                    <p className="mt-1 text-sm font-medium leading-6 text-[#5a5f52]">
-                      Your presence will make our celebration more joyful and memorable.
+
+                    <div className="mb-3 text-[27px] leading-none text-[#3e4236] sm:text-[32px]">
+                      بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+                    </div>
+
+                    <p className="mx-auto mb-4 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
+                      “In the name of Allah,
+                      <br />
+                      the most gracious & the most merciful”
+                    </p>
+
+                    <p className="mx-auto mb-3 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
+                      We are inviting you to celebrate the wedding ceremony of
+                    </p>
+
+                    <h2
+                      className="name-text mx-auto max-w-full text-[30px] leading-[1.08] text-[#43463d] sm:text-[36px] xl:whitespace-nowrap xl:text-[40px]"
+                      style={{ fontFamily: '"Great Vibes", cursive' }}
+                    >
+                      Marufa Yeasmin Misu
+                    </h2>
+
+                    <p className="mt-2 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
+                      Youngest daughter of Md. Mokbul Hossain
+                    </p>
+
+                    <div className="my-2 text-[30px] text-[#5f7464]">&</div>
+
+                    <h2
+                      className="name-text mx-auto max-w-full text-[28px] leading-[1.08] text-[#43463d] sm:text-[34px] xl:whitespace-nowrap xl:text-[38px]"
+                      style={{ fontFamily: '"Great Vibes", cursive' }}
+                    >
+                      Md Taufik Hasan Tusher
+                    </h2>
+
+                    <p className="mt-2 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
+                      Elder son of A.H.M Saiful Islam
+                    </p>
+                  </div>
+
+                  <div className="relative z-10 mt-4">
+                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border border-[#d6c19a]/45 bg-[#fffdf8]/85 text-[#5f7464] shadow-sm">
+                      <Heart size={28} strokeWidth={1.8} />
+                    </div>
+
+                    <div className="rounded-2xl border border-[#d6c19a]/35 bg-[#f8f5ef]/90 px-4 py-3">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#7d8a7a]">
+                        Warm Invitation
+                      </p>
+                      <p className="mt-1 text-sm font-medium leading-6 text-[#5a5f52]">
+                        Your presence will make our celebration more joyful and memorable.
+                      </p>
+                    </div>
+
+                    <p
+                      className="mt-4 text-[34px] leading-none text-[#d2b77e]/70"
+                      style={{ fontFamily: '"Great Vibes", cursive' }}
+                    >
+                      Misu & Tusher
                     </p>
                   </div>
                 </div>
@@ -267,23 +306,33 @@ export default function WeddingInvitationPage() {
                                 {event.title}
                               </h4>
 
-                              <p className="mt-1 text-sm font-bold uppercase tracking-wide text-[#5f7464]">
-                                {event.dayText} • {event.dateText} • {event.timeText}
-                              </p>
+                              <div className="mt-2 flex flex-wrap gap-3 text-sm font-bold uppercase tracking-wide text-[#5f7464]">
+                                <span className="inline-flex items-center gap-1.5">
+                                  <CalendarDays size={15} />
+                                  {event.dayText}, {event.dateText}
+                                </span>
+
+                                <span className="inline-flex items-center gap-1.5">
+                                  <Clock size={15} />
+                                  {event.timeText}
+                                </span>
+                              </div>
                             </div>
 
                             <a
                               href={event.mapUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="rounded-full bg-[#5f7464] px-4 py-2 text-xs font-bold text-white shadow-[0_10px_24px_rgba(95,116,100,0.22)] transition hover:-translate-y-0.5"
+                              className="inline-flex items-center gap-2 rounded-full bg-[#5f7464] px-4 py-2 text-xs font-bold text-white shadow-[0_10px_24px_rgba(95,116,100,0.22)] transition hover:-translate-y-0.5"
                             >
+                              <Navigation size={14} />
                               Open Map
                             </a>
                           </div>
 
                           <div className="mt-3 rounded-2xl bg-[#faf8f3] px-4 py-3">
-                            <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#7d8a7a]">
+                            <p className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-[#7d8a7a]">
+                              <MapPin size={13} />
                               Venue
                             </p>
                             <p className="mt-1 text-sm font-extrabold uppercase leading-6 text-[#3e4236] sm:text-base">
@@ -317,8 +366,9 @@ export default function WeddingInvitationPage() {
                         </p>
                         <a
                           href="tel:+8801701030436"
-                          className="mt-1 inline-block text-lg font-extrabold text-[#3e4236] no-underline"
+                          className="mt-1 inline-flex items-center gap-2 text-lg font-extrabold text-[#3e4236] no-underline"
                         >
+                          <Phone size={18} />
                           +8801701030436
                         </a>
                       </div>
@@ -327,16 +377,18 @@ export default function WeddingInvitationPage() {
                         <button
                           type="button"
                           onClick={handleShare}
-                          className="rounded-full bg-[#5f7464] px-5 py-2.5 text-xs font-bold text-white shadow-[0_12px_26px_rgba(95,116,100,0.28)] transition hover:-translate-y-1 sm:text-sm"
+                          className="inline-flex items-center gap-2 rounded-full bg-[#5f7464] px-5 py-2.5 text-xs font-bold text-white shadow-[0_12px_26px_rgba(95,116,100,0.28)] transition hover:-translate-y-1 sm:text-sm"
                         >
+                          <Share2 size={15} />
                           {copied ? "Copied!" : "Share"}
                         </button>
 
                         <button
                           type="button"
                           onClick={() => setOpened(false)}
-                          className="rounded-full border border-[#5f7464]/30 bg-white px-5 py-2.5 text-xs font-bold text-[#5f7464] transition hover:-translate-y-1 sm:text-sm"
+                          className="inline-flex items-center gap-2 rounded-full border border-[#5f7464]/30 bg-white px-5 py-2.5 text-xs font-bold text-[#5f7464] transition hover:-translate-y-1 sm:text-sm"
                         >
+                          <X size={15} />
                           Close
                         </button>
                       </div>
@@ -346,13 +398,13 @@ export default function WeddingInvitationPage() {
               </div>
             </div>
 
-            <footer className="mt-4 rounded-2xl border border-[#d6c19a]/40 bg-[#e7e2d8]/70 px-5 py-3 text-center text-xs font-semibold text-[#5d6156] shadow-sm">
+            <footer className="mt-4 rounded-2xl border border-[#c9c2b6]/35 bg-[#d8d4cc]/35 px-5 py-3 text-center text-xs font-medium text-[#5d6156]/60 shadow-sm">
               Developed by:{" "}
               <a
                 href="https://github.com/SajjadHossainSoykot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-extrabold text-[#5f7464] underline underline-offset-4 transition hover:text-[#3e4236]"
+                className="font-semibold text-[#4f6253]/70 underline underline-offset-4 transition hover:text-[#3e4236]"
               >
                 Sajjad Hossain Soykot
               </a>
