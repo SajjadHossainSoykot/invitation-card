@@ -1,10 +1,32 @@
 import type { Metadata } from "next";
+import { Great_Vibes, Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-great-vibes",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Wedding Invitation | Tusher & Misu",
+  title: "Wedding Invitation",
   description:
-    "Wedding invitation portal for Marufa Yeasmin Misu and Md Taufik Hasan Tusher.",
+    "You are invited to the wedding ceremony and reception of Marufa Yeasmin Misu & Md Taufik Hasan Tusher.",
 };
 
 export default function RootLayout({
@@ -14,7 +36,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body
+        className={`${poppins.variable} ${playfair.variable} ${greatVibes.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
