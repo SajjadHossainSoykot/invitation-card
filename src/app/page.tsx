@@ -168,12 +168,12 @@ export default function WeddingInvitationPage() {
                 }`}
               >
                 <div className="envelope-letter absolute left-[35px] right-[35px] top-0 z-[2] flex h-[180px] flex-col items-center justify-center rounded-2xl border border-[#d6c19a]/80 bg-[#fffdf7] px-4 text-center shadow-lg max-[420px]:left-[28px] max-[420px]:right-[28px] max-[420px]:h-[162px]">
-                  <div className="flex h-[100px] w-[100px] items-center justify-center rounded-full border border-[#5f7464]/10 bg-transparent p-0 shadow-none max-[420px]:h-[76px] max-[420px]:w-[76px]">
+                  <div className="flex h-[80px] w-[80px] items-center justify-center rounded-full border border-[#5f7464]/10 bg-transparent p-0 shadow-none max-[420px]:h-[76px] max-[420px]:w-[76px]">
                     <Image
                       src="/logo.png"
                       alt="Wedding logo"
-                      width={100}
-                      height={100}
+                      width={80}
+                      height={80}
                       className="h-full w-full object-contain opacity-90"
                       priority
                     />
