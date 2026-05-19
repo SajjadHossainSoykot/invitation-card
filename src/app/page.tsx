@@ -35,8 +35,8 @@ const EVENTS: EventInfo[] = [
     dayText: "Saturday",
     dateText: "30 May 2026",
     timeText: "11:30 AM",
-    venueLine1: "Quince Restaurant",
-    venueLine2: "2nd Floor Convention Hall, Kanaikhali, Natore",
+    venueLine1: "Quince Restaurant, Kanaikhali, Natore",
+    venueLine2: "2nd Floor Convention Hall",
     mapUrl: "https://maps.app.goo.gl/Y7oV3teYAVHfGu5u5?g_st=ac",
   },
   {
@@ -47,7 +47,7 @@ const EVENTS: EventInfo[] = [
     badge: "Reception",
     dayText: "Sunday",
     dateText: "31 May 2026",
-    timeText: "11:30 AM",
+    timeText: "12:00 AM",
     venueLine1: "Kazi Community Center",
     venueLine2: "Adjacent to SP Bridge (West Bank of the Korotoa River), Bogura",
     mapUrl: "https://maps.app.goo.gl/UaN3F7TVrznrdT9g7",
@@ -61,7 +61,9 @@ type CountdownState = {
 
 export default function WeddingInvitationPage() {
   const [opened, setOpened] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
   const [copied, setCopied] = useState(false);
+
   const [countdown, setCountdown] = useState<CountdownState>({
     label: "Preparing celebration time...",
     value: "Loading...",
@@ -103,6 +105,21 @@ export default function WeddingInvitationPage() {
     return () => clearInterval(timer);
   }, []);
 
+  const handleOpenEnvelope = () => {
+    if (isOpening) return;
+
+    setIsOpening(true);
+
+    setTimeout(() => {
+      setOpened(true);
+    }, 950);
+  };
+
+  const handleCloseCard = () => {
+    setOpened(false);
+    setIsOpening(false);
+  };
+
   const handleShare = async () => {
     const shareData = {
       title: "Wedding Invitation",
@@ -129,18 +146,27 @@ export default function WeddingInvitationPage() {
     <main className="min-h-screen overflow-x-hidden bg-[#f4efe7] text-[#3e4236]">
       {!opened ? (
         <section className="flex min-h-screen items-center justify-center bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(214,193,154,0.35),transparent_35%),linear-gradient(135deg,#fbf7ef,#e8efe7)] px-5 py-8">
-          <div className="w-full max-w-[520px] rounded-[32px] border border-[#d6c19a]/50 bg-[#fffdf7]/90 px-6 py-10 text-center shadow-[0_24px_70px_rgba(63,67,54,0.16)] backdrop-blur-md">
+          <div
+            className={`w-full max-w-[520px] rounded-[32px] border border-[#d6c19a]/50 bg-[#fffdf7]/90 px-6 py-10 text-center shadow-[0_24px_70px_rgba(63,67,54,0.16)] backdrop-blur-md ${
+              isOpening ? "cover-leaving" : ""
+            }`}
+          >
             <p className="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-[#5f7464]">
               Wedding Invitation
             </p>
 
             <button
               type="button"
-              onClick={() => setOpened(true)}
+              onClick={handleOpenEnvelope}
+              disabled={isOpening}
               aria-label="Open wedding invitation"
-              className="group mx-auto block border-0 bg-transparent p-0"
+              className="group mx-auto block border-0 bg-transparent p-0 disabled:cursor-not-allowed"
             >
-              <div className="envelope relative mx-auto h-[210px] w-[310px] transition duration-300 group-hover:-translate-y-2 group-hover:scale-[1.03] max-[420px]:h-[185px] max-[420px]:w-[265px]">
+              <div
+                className={`envelope relative mx-auto h-[210px] w-[310px] transition duration-300 group-hover:-translate-y-2 group-hover:scale-[1.03] max-[420px]:h-[185px] max-[420px]:w-[265px] ${
+                  isOpening ? "envelope-opened" : ""
+                }`}
+              >
                 <div className="envelope-letter absolute left-[35px] right-[35px] top-0 z-[2] flex h-[165px] flex-col items-center justify-center rounded-2xl border border-[#d6c19a]/80 bg-[#fffdf7] px-4 text-center shadow-lg max-[420px]:left-[28px] max-[420px]:right-[28px] max-[420px]:h-[145px]">
                   <div className="flex h-[70px] w-[70px] items-center justify-center rounded-full border border-[#5f7464]/50 bg-white/90 p-2 shadow-sm max-[420px]:h-[60px] max-[420px]:w-[60px]">
                     <Image
@@ -152,6 +178,11 @@ export default function WeddingInvitationPage() {
                       priority
                     />
                   </div>
+
+                  <p className="mt-2 text-[11px] font-semibold leading-5 text-[#5f7464] max-[420px]:text-[10px] max-[420px]:leading-4">
+                    You are warmly invited to celebrate a beautiful new
+                    beginning of
+                  </p>
 
                   <p
                     className="mt-1 text-[28px] leading-none text-[#5f7464] max-[420px]:text-[24px]"
@@ -181,7 +212,7 @@ export default function WeddingInvitationPage() {
         <>
           <section className="flex min-h-screen items-center bg-[radial-gradient(circle_at_top_right,rgba(220,231,220,0.95),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(214,193,154,0.25),transparent_34%),#f4efe7] px-3 py-3">
             <div className="mx-auto w-full max-w-[1280px]">
-              <div className="invitation-card relative w-full overflow-hidden rounded-[26px] border border-[#d6c19a]/50 bg-[#fffdf7]/95 shadow-[0_28px_80px_rgba(63,67,54,0.16)]">
+              <div className="invitation-card card-enter relative w-full overflow-hidden rounded-[26px] border border-[#d6c19a]/50 bg-[#fffdf7]/95 shadow-[0_28px_80px_rgba(63,67,54,0.16)]">
                 <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#dce7dc]/70 blur-sm"></div>
                 <div className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-[#f2eadb]/70 blur-sm"></div>
 
@@ -365,7 +396,7 @@ export default function WeddingInvitationPage() {
 
                         <button
                           type="button"
-                          onClick={() => setOpened(false)}
+                          onClick={handleCloseCard}
                           className="rounded-full border border-[#5f7464]/30 bg-white px-5 py-2.5 text-xs font-bold text-[#5f7464] transition hover:-translate-y-1 sm:text-sm"
                         >
                           Close
