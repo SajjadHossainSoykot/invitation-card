@@ -34,8 +34,35 @@ body {
   transform: rotateX(35deg);
 }
 
+.envelope {
+  perspective: 900px;
+}
+
 .envelope-letter {
   animation: floatLetter 2.4s ease-in-out infinite;
+}
+
+.envelope-opened {
+  animation: envelopeLift 0.95s ease forwards;
+}
+
+.envelope-opened .envelope-flap {
+  transform: rotateX(165deg);
+  z-index: 1;
+}
+
+.envelope-opened .envelope-letter {
+  animation: none;
+  transform: translateY(-78px) scale(1.04);
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cover-leaving {
+  animation: coverLeaving 0.95s ease forwards;
+}
+
+.card-enter {
+  animation: cardEnter 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .invitation-card {
@@ -62,6 +89,51 @@ body {
 
   50% {
     transform: translateY(-8px);
+  }
+}
+
+@keyframes envelopeLift {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  45% {
+    transform: translateY(-12px) scale(1.04);
+  }
+
+  100% {
+    transform: translateY(-28px) scale(0.92);
+  }
+}
+
+@keyframes coverLeaving {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(0.98);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+}
+
+@keyframes cardEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(26px) scale(0.96);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
 
