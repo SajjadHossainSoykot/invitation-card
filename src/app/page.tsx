@@ -163,18 +163,18 @@ export default function WeddingInvitationPage() {
               className="group mx-auto block border-0 bg-transparent p-0 disabled:cursor-not-allowed"
             >
               <div
-                className={`envelope relative mx-auto h-[210px] w-[310px] transition duration-300 group-hover:-translate-y-2 group-hover:scale-[1.03] max-[420px]:h-[185px] max-[420px]:w-[265px] ${
+                className={`envelope relative mx-auto h-[230px] w-[330px] transition duration-300 group-hover:-translate-y-2 group-hover:scale-[1.03] max-[420px]:h-[205px] max-[420px]:w-[285px] ${
                   isOpening ? "envelope-opened" : ""
                 }`}
               >
-                <div className="envelope-letter absolute left-[35px] right-[35px] top-0 z-[2] flex h-[165px] flex-col items-center justify-center rounded-2xl border border-[#d6c19a]/80 bg-[#fffdf7] px-4 text-center shadow-lg max-[420px]:left-[28px] max-[420px]:right-[28px] max-[420px]:h-[145px]">
-                  <div className="flex h-[70px] w-[70px] items-center justify-center rounded-full border border-[#5f7464]/50 bg-white/90 p-2 shadow-sm max-[420px]:h-[60px] max-[420px]:w-[60px]">
+                <div className="envelope-letter absolute left-[35px] right-[35px] top-0 z-[2] flex h-[180px] flex-col items-center justify-center rounded-2xl border border-[#d6c19a]/80 bg-[#fffdf7] px-4 text-center shadow-lg max-[420px]:left-[28px] max-[420px]:right-[28px] max-[420px]:h-[162px]">
+                  <div className="flex h-[100px] w-[100px] items-center justify-center rounded-full border border-[#5f7464]/10 bg-transparent p-0 shadow-none max-[420px]:h-[76px] max-[420px]:w-[76px]">
                     <Image
                       src="/logo.png"
                       alt="Wedding logo"
-                      width={70}
-                      height={70}
-                      className="h-full w-full object-contain"
+                      width={100}
+                      height={100}
+                      className="h-full w-full object-contain opacity-90"
                       priority
                     />
                   </div>
@@ -192,9 +192,9 @@ export default function WeddingInvitationPage() {
                   </p>
                 </div>
 
-                <div className="envelope-body absolute inset-x-0 bottom-0 top-[52px] overflow-hidden rounded-b-[20px] border-2 border-[#5f7464]/30 bg-gradient-to-br from-[#eef5ee] to-white shadow-[0_18px_40px_rgba(63,67,54,0.2)]"></div>
+                <div className="envelope-body absolute inset-x-0 bottom-0 top-[60px] overflow-hidden rounded-b-[20px] border-2 border-[#5f7464]/30 bg-gradient-to-br from-[#eef5ee] to-white shadow-[0_18px_40px_rgba(63,67,54,0.2)]"></div>
 
-                <div className="envelope-flap absolute inset-x-0 top-[52px] z-[3] h-[126px] border-2 border-[#5f7464]/30 bg-[#dfeadf] transition duration-500"></div>
+                <div className="envelope-flap absolute inset-x-0 top-[60px] z-[3] h-[132px] border-2 border-[#5f7464]/30 bg-[#dfeadf] transition duration-500"></div>
               </div>
             </button>
 
@@ -217,15 +217,14 @@ export default function WeddingInvitationPage() {
                 <div className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-[#f2eadb]/70 blur-sm"></div>
 
                 <div className="relative z-10 grid w-full grid-cols-1 gap-3 p-3 xl:grid-cols-[0.9fr_1.1fr] xl:gap-4 xl:p-4">
-                  {/* Left Panel */}
                   <div className="left-panel relative flex flex-col justify-center overflow-hidden rounded-[24px] border border-[#d6c19a]/45 bg-white/55 px-5 py-5 text-center xl:min-h-[calc(100vh-72px)]">
-                    <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-[#5f7464]/20 bg-white p-2 shadow-sm">
+                    <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-[#5f7464]/10 bg-transparent p-0 shadow-none">
                       <Image
                         src="/logo.png"
                         alt="Wedding logo"
-                        width={50}
-                        height={50}
-                        className="h-full w-full object-contain"
+                        width={100}
+                        height={100}
+                        className="h-full w-full object-contain opacity-90"
                         priority
                       />
                     </div>
@@ -283,7 +282,6 @@ export default function WeddingInvitationPage() {
                     </div>
                   </div>
 
-                  {/* Right Panel */}
                   <div className="right-panel flex flex-col justify-center rounded-[24px] border border-[#d6c19a]/35 bg-[#fffdf8]/60 px-3 py-3 xl:min-h-[calc(100vh-72px)]">
                     <div className="mb-3 text-center">
                       <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#7d8a7a]">
