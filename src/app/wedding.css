@@ -38,6 +38,10 @@ body {
   animation: floatLetter 2.4s ease-in-out infinite;
 }
 
+.invitation-card {
+  max-height: calc(100vh - 24px);
+}
+
 @keyframes floatLetter {
   0%,
   100% {
@@ -46,5 +50,11 @@ body {
 
   50% {
     transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 767px) {
+  .invitation-card {
+    max-height: none;
   }
 }
