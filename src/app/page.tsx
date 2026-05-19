@@ -136,16 +136,20 @@ export default function WeddingInvitationPage() {
         setTimeout(() => setCopied(false), 2000);
       }
     } catch {
-      await navigator.clipboard.writeText(window.location.href);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch {
+        setCopied(false);
+      }
     }
   };
 
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#f4efe7] text-[#3e4236]">
+    <main className="min-h-[100svh] overflow-x-hidden bg-[#f4efe7] text-[#3e4236]">
       {!opened ? (
-        <section className="flex min-h-screen items-center justify-center bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(214,193,154,0.35),transparent_35%),linear-gradient(135deg,#fbf7ef,#e8efe7)] px-5 py-8">
+        <section className="flex min-h-[100svh] items-center justify-center bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(214,193,154,0.35),transparent_35%),linear-gradient(135deg,#fbf7ef,#e8efe7)] px-5 py-8">
           <div
             className={`w-full max-w-[520px] rounded-[32px] border border-[#d6c19a]/50 bg-[#fffdf7]/90 px-6 py-10 text-center shadow-[0_24px_70px_rgba(63,67,54,0.16)] backdrop-blur-md ${
               isOpening ? "cover-leaving" : ""
@@ -174,6 +178,7 @@ export default function WeddingInvitationPage() {
                       alt="Wedding logo"
                       width={80}
                       height={80}
+                      sizes="80px"
                       className="h-full w-full object-contain opacity-90"
                       priority
                     />
@@ -184,10 +189,7 @@ export default function WeddingInvitationPage() {
                     beginning of
                   </p>
 
-                  <p
-                    className="mt-1 text-[28px] leading-none text-[#5f7464] max-[420px]:text-[24px]"
-                    style={{ fontFamily: '"Great Vibes", cursive' }}
-                  >
+                  <p className="name-text mt-1 text-[28px] leading-none text-[#5f7464] max-[420px]:text-[24px]">
                     Misu & Tusher
                   </p>
                 </div>
@@ -198,7 +200,7 @@ export default function WeddingInvitationPage() {
               </div>
             </button>
 
-            <h1 className="mt-6 font-serif text-4xl font-semibold md:text-5xl">
+            <h1 className="font-playfair mt-6 text-4xl font-semibold md:text-5xl">
               Tap to Open
             </h1>
 
@@ -210,22 +212,22 @@ export default function WeddingInvitationPage() {
         </section>
       ) : (
         <>
-          <section className="flex min-h-screen items-center bg-[radial-gradient(circle_at_top_right,rgba(220,231,220,0.95),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(214,193,154,0.25),transparent_34%),#f4efe7] px-3 py-3">
+          <section className="flex min-h-[100svh] items-center bg-[radial-gradient(circle_at_top_right,rgba(220,231,220,0.95),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(214,193,154,0.25),transparent_34%),#f4efe7] px-3 py-3">
             <div className="mx-auto w-full max-w-[1280px]">
               <div className="invitation-card card-enter relative w-full overflow-hidden rounded-[26px] border border-[#d6c19a]/50 bg-[#fffdf7]/95 shadow-[0_28px_80px_rgba(63,67,54,0.16)]">
                 <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#dce7dc]/70 blur-sm"></div>
                 <div className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-[#f2eadb]/70 blur-sm"></div>
 
                 <div className="relative z-10 grid w-full grid-cols-1 gap-3 p-3 xl:grid-cols-[0.9fr_1.1fr] xl:gap-4 xl:p-4">
-                  <div className="left-panel relative flex flex-col justify-center overflow-hidden rounded-[24px] border border-[#d6c19a]/45 bg-white/55 px-5 py-5 text-center xl:min-h-[calc(100vh-72px)]">
+                  <div className="left-panel relative flex flex-col justify-center overflow-hidden rounded-[24px] border border-[#d6c19a]/45 bg-white/55 px-5 py-5 text-center xl:min-h-[calc(100svh-72px)]">
                     <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-[#5f7464]/10 bg-transparent p-0 shadow-none">
                       <Image
                         src="/logo.png"
                         alt="Wedding logo"
                         width={100}
                         height={100}
+                        sizes="100px"
                         className="h-full w-full object-contain opacity-90"
-                        priority
                       />
                     </div>
 
@@ -247,10 +249,7 @@ export default function WeddingInvitationPage() {
                       We are inviting you to celebrate the wedding ceremony of
                     </p>
 
-                    <h2
-                      className="name-text mx-auto max-w-full text-[30px] leading-[1.08] text-[#43463d] sm:text-[36px] xl:whitespace-nowrap xl:text-[40px]"
-                      style={{ fontFamily: '"Great Vibes", cursive' }}
-                    >
+                    <h2 className="name-text mx-auto max-w-full text-[30px] leading-[1.08] text-[#43463d] sm:text-[36px] xl:whitespace-nowrap xl:text-[40px]">
                       Marufa Yeasmin Misu
                     </h2>
 
@@ -260,10 +259,7 @@ export default function WeddingInvitationPage() {
 
                     <div className="my-2 text-[28px] text-[#5f7464]">&</div>
 
-                    <h2
-                      className="name-text mx-auto max-w-full text-[28px] leading-[1.08] text-[#43463d] sm:text-[34px] xl:whitespace-nowrap xl:text-[38px]"
-                      style={{ fontFamily: '"Great Vibes", cursive' }}
-                    >
+                    <h2 className="name-text mx-auto max-w-full text-[28px] leading-[1.08] text-[#43463d] sm:text-[34px] xl:whitespace-nowrap xl:text-[38px]">
                       Md Taufik Hasan Tusher
                     </h2>
 
@@ -282,12 +278,12 @@ export default function WeddingInvitationPage() {
                     </div>
                   </div>
 
-                  <div className="right-panel flex flex-col justify-center rounded-[24px] border border-[#d6c19a]/35 bg-[#fffdf8]/60 px-3 py-3 xl:min-h-[calc(100vh-72px)]">
+                  <div className="right-panel flex flex-col justify-center rounded-[24px] border border-[#d6c19a]/35 bg-[#fffdf8]/60 px-3 py-3 xl:min-h-[calc(100svh-72px)]">
                     <div className="mb-3 text-center">
                       <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#7d8a7a]">
                         Celebration Details
                       </p>
-                      <h3 className="mt-1 text-xl font-semibold text-[#3e4236] sm:text-2xl xl:text-[28px]">
+                      <h3 className="font-playfair mt-1 text-xl font-semibold text-[#3e4236] sm:text-2xl xl:text-[28px]">
                         Wedding & Reception
                       </h3>
                     </div>
