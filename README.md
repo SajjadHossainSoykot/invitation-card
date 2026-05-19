@@ -1,36 +1,222 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💌 Invitation Card Web Portal
 
-## Getting Started
+A modern and reusable digital invitation card web portal built with **Next.js**, **React**, **TypeScript**, **Tailwind CSS**, and **Lucide React**.
 
-First, run the development server:
+The project shows a clickable animated envelope first. After opening the envelope, a responsive invitation card appears with event details, countdown timer, venue information, Google Maps links, and sharing option.
+
+---
+
+## 🔗 Repository
+
+GitHub:  
+https://github.com/SajjadHossainSoykot/invitation-card
+
+---
+
+## 🚀 Overview
+
+This project is a customizable invitation card template for different events such as weddings, receptions, engagements, birthdays, anniversaries, family programs, and other ceremonies.
+
+It is designed to be simple, elegant, responsive, and easy to modify.
+
+---
+
+## ✨ Features
+
+- Animated clickable envelope
+- Smooth card opening animation
+- Responsive invitation card layout
+- Event date and time section
+- Venue and Google Maps button
+- Live countdown timer
+- Share invitation button
+- Custom logo support
+- Mobile-friendly layout
+- Footer/developer credit section
+- Reusable design for multiple event types
+
+---
+
+## 🧑‍💻 Technology Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Lucide React Icons
+- CSS Animations
+- Google Fonts
+
+---
+
+## 🏗 Project Structure
+
+```text
+invitation-card/
+├── public/
+│   └── logo.png
+├── src/
+│   └── app/
+│       ├── globals.css
+│       ├── layout.tsx
+│       ├── page.tsx
+│       └── wedding.css
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+├── eslint.config.mjs
+├── README.md
+└── LICENSE
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/SajjadHossainSoykot/invitation-card.git
+```
+
+Go to the project folder:
+
+```bash
+cd invitation-card
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open in browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📦 Required Package
 
-To learn more about Next.js, take a look at the following resources:
+The project uses Lucide icons. If needed, install manually:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm install lucide-react
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠 Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🖼 Logo Setup
+
+Place your logo here:
+
+```text
+public/logo.png
+```
+
+For the best result, use a transparent PNG logo.
+
+---
+
+## ✏️ Customization
+
+Main invitation content can be edited from:
+
+```text
+src/app/page.tsx
+```
+
+You can customize:
+
+- Invitation title
+- Event names
+- Date and time
+- Venue details
+- Google Maps links
+- Countdown date
+- RSVP number
+- Share message
+- Logo
+- Footer text
+
+Main styling can be edited from:
+
+```text
+src/app/wedding.css
+src/app/globals.css
+```
+
+---
+
+## 🚀 Deployment
+
+This project can be deployed on:
+
+- Vercel
+- Netlify
+- Render
+- Railway
+
+Recommended:
+
+```text
+Vercel
+```
+
+Build command:
+
+```bash
+npm run build
+```
+
+---
+
+## ✅ Status
+
+| Feature | Status |
+|---|---|
+| Next.js Setup | Completed |
+| Tailwind CSS | Completed |
+| Envelope Animation | Completed |
+| Invitation Card UI | Completed |
+| Countdown Timer | Completed |
+| Google Maps Links | Completed |
+| Share Button | Completed |
+| Responsive Design | Completed |
+
+---
+
+## ⚖️ License
+
+This project is licensed under the **GNU Affero General Public License v3.0**.
+
+You may use, modify, and distribute this project under the terms of the AGPL-3.0 license.
+
+See the `LICENSE` file for details.
+
+---
+
+## ⭐ Final Note
+
+This project is a simple and elegant digital invitation card template.  
+It can be reused and customized for many different invitation-based projects.
