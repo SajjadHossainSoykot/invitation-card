@@ -6,10 +6,13 @@ The project shows a clickable animated envelope first. After opening the envelop
 
 ---
 
-## 🔗 Repository
+## 🔗 Project Links
 
-GitHub:  
+GitHub Repository:  
 https://github.com/SajjadHossainSoykot/invitation-card
+
+Live Website:
+
 
 ---
 
