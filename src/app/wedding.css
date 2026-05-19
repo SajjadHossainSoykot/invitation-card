@@ -1,0 +1,517 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #f4efe7;
+  --cream: #fffdf7;
+  --dark: #3e4236;
+  --green: #5f7464;
+  --soft-green: #dce7dc;
+  --gold: #d6c19a;
+  --muted: #74766a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+.wedding-page {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: var(--dark);
+}
+
+/* ===============================
+   COVER / ENVELOPE SCREEN
+================================ */
+
+.cover-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(214, 193, 154, 0.3), transparent 35%),
+    linear-gradient(135deg, #fbf7ef, #e8efe7);
+}
+
+.cover-content {
+  width: min(520px, 100%);
+  text-align: center;
+  padding: 44px 28px;
+  border-radius: 32px;
+  background: rgba(255, 253, 247, 0.78);
+  border: 1px solid rgba(214, 193, 154, 0.45);
+  box-shadow: 0 24px 70px rgba(63, 67, 54, 0.16);
+  backdrop-filter: blur(12px);
+}
+
+.small-title {
+  margin: 0 0 22px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 13px;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.cover-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 7vw, 58px);
+  margin: 26px 0 8px;
+  color: var(--dark);
+}
+
+.cover-subtitle {
+  max-width: 360px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Envelope */
+
+.envelope-wrapper {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.envelope {
+  position: relative;
+  width: 290px;
+  height: 190px;
+  margin: 0 auto;
+  transition: transform 0.35s ease;
+}
+
+.envelope-wrapper:hover .envelope {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.envelope-body {
+  position: absolute;
+  inset: 45px 0 0;
+  background: linear-gradient(145deg, #eef5ee, #ffffff);
+  border: 2px solid rgba(95, 116, 100, 0.35);
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 18px 40px rgba(63, 67, 54, 0.2);
+  overflow: hidden;
+}
+
+.envelope-body::before,
+.envelope-body::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 52%;
+  height: 100%;
+  background: rgba(214, 193, 154, 0.28);
+}
+
+.envelope-body::before {
+  left: 0;
+  clip-path: polygon(0 0, 100% 52%, 0 100%);
+}
+
+.envelope-body::after {
+  right: 0;
+  clip-path: polygon(100% 0, 0 52%, 100% 100%);
+}
+
+.envelope-flap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 46px;
+  height: 120px;
+  background: #dfeadf;
+  border: 2px solid rgba(95, 116, 100, 0.35);
+  clip-path: polygon(0 0, 50% 70%, 100% 0);
+  transform-origin: top;
+  z-index: 3;
+  transition: transform 0.5s ease;
+}
+
+.envelope-wrapper:hover .envelope-flap {
+  transform: rotateX(35deg);
+}
+
+.envelope-letter {
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  top: 0;
+  height: 150px;
+  background: #fffdf7;
+  border: 1px solid rgba(214, 193, 154, 0.7);
+  border-radius: 14px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(63, 67, 54, 0.12);
+  animation: floatLetter 2.4s ease-in-out infinite;
+}
+
+.monogram {
+  width: 86px;
+  height: 86px;
+  border: 2px solid rgba(95, 116, 100, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+  color: var(--green);
+}
+
+@keyframes floatLetter {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ===============================
+   INVITATION CARD
+================================ */
+
+.invitation-screen {
+  min-height: 100vh;
+  padding: 32px 16px;
+  display: flex;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top right, rgba(220, 231, 220, 0.9), transparent 32%),
+    radial-gradient(circle at bottom left, rgba(214, 193, 154, 0.22), transparent 34%),
+    #f4efe7;
+}
+
+.card-shell {
+  position: relative;
+  width: min(760px, 100%);
+  min-height: 980px;
+  padding: clamp(34px, 6vw, 70px) clamp(20px, 5vw, 72px);
+  text-align: center;
+  overflow: hidden;
+  border-radius: 26px;
+  background:
+    linear-gradient(rgba(255, 253, 247, 0.92), rgba(255, 253, 247, 0.92)),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 34px,
+      rgba(214, 193, 154, 0.14) 35px,
+      rgba(214, 193, 154, 0.14) 37px
+    );
+  border: 1px solid rgba(214, 193, 154, 0.45);
+  box-shadow: 0 28px 80px rgba(63, 67, 54, 0.16);
+  animation: cardReveal 0.7s ease both;
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.card-shell::before,
+.card-shell::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 28%, transparent 29%),
+    radial-gradient(circle at 20% 35%, rgba(95, 116, 100, 0.22), transparent 32%),
+    radial-gradient(circle at 80% 70%, rgba(214, 193, 154, 0.28), transparent 34%);
+  border-radius: 50%;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.card-shell::before {
+  right: -90px;
+  top: -80px;
+}
+
+.card-shell::after {
+  left: -95px;
+  bottom: -95px;
+}
+
+.flower {
+  position: absolute;
+  z-index: 1;
+  font-size: 120px;
+  color: rgba(95, 116, 100, 0.12);
+  pointer-events: none;
+}
+
+.flower-top {
+  right: 20px;
+  top: 20px;
+}
+
+.flower-bottom {
+  left: 20px;
+  bottom: 20px;
+}
+
+.bismillah,
+.quote,
+.invite-line,
+.bride-name,
+.groom-name,
+.family-text,
+.ampersand,
+.date-box,
+.venue,
+.countdown-box,
+.rsvp,
+.actions {
+  position: relative;
+  z-index: 2;
+}
+
+.bismillah {
+  font-size: clamp(24px, 5vw, 38px);
+  margin-bottom: 14px;
+  color: var(--dark);
+}
+
+.quote {
+  margin: 0 auto 40px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.7;
+  color: var(--dark);
+  font-size: clamp(14px, 2vw, 18px);
+}
+
+.invite-line {
+  margin: 0 auto 34px;
+  max-width: 560px;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  font-size: clamp(14px, 2.5vw, 20px);
+}
+
+.bride-name,
+.groom-name {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(48px, 10vw, 76px);
+  line-height: 1.05;
+  margin: 0;
+  color: var(--dark);
+  font-weight: 400;
+}
+
+.family-text {
+  margin: 12px 0 28px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  font-size: clamp(14px, 2.3vw, 20px);
+}
+
+.ampersand {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  color: var(--green);
+  margin: 8px 0 28px;
+}
+
+.date-box {
+  margin: 44px auto 34px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: clamp(12px, 4vw, 36px);
+}
+
+.side-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.side-date span {
+  width: 100%;
+  height: 2px;
+  max-width: 170px;
+  background: var(--green);
+  opacity: 0.7;
+}
+
+.side-date strong {
+  font-size: clamp(13px, 2vw, 20px);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.main-date p {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: clamp(16px, 2.4vw, 22px);
+}
+
+.main-date h3 {
+  margin: -4px 0;
+  font-size: clamp(78px, 15vw, 116px);
+  line-height: 1;
+  color: var(--green);
+  font-family: "Playfair Display", serif;
+}
+
+.venue {
+  margin-top: 30px;
+}
+
+.venue-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 42px;
+  margin: 0 0 6px;
+  color: var(--dark);
+}
+
+.venue h4 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: clamp(16px, 2.5vw, 22px);
+  letter-spacing: 0.6px;
+}
+
+.venue p:last-child {
+  margin: 8px 0 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: clamp(14px, 2.2vw, 18px);
+}
+
+.countdown-box {
+  margin: 36px auto 26px;
+  padding: 16px 20px;
+  max-width: 420px;
+  border-radius: 18px;
+  background: rgba(220, 231, 220, 0.72);
+  border: 1px solid rgba(95, 116, 100, 0.18);
+}
+
+.countdown-box p,
+.rsvp p {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.countdown-box strong {
+  font-size: clamp(18px, 3.2vw, 28px);
+  color: var(--green);
+}
+
+.rsvp {
+  margin-top: 18px;
+}
+
+.rsvp a {
+  color: var(--dark);
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.actions {
+  margin: 34px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  border: 0;
+  text-decoration: none;
+  background: var(--green);
+  color: #fff;
+  padding: 13px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(95, 116, 100, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(95, 116, 100, 0.34);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 620px) {
+  .cover-content {
+    padding: 34px 18px;
+  }
+
+  .envelope {
+    width: 245px;
+    height: 170px;
+  }
+
+  .card-shell {
+    border-radius: 18px;
+    min-height: auto;
+  }
+
+  .date-box {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .side-date span {
+    max-width: 160px;
+  }
+
+  .main-date h3 {
+    font-size: 90px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+}
