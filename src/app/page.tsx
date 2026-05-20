@@ -147,11 +147,11 @@ export default function WeddingInvitationPage() {
   };
 
   return (
-    <main className="min-h-[100svh] overflow-x-hidden bg-[#f4efe7] text-[#3e4236]">
+    <main className="min-h-svh overflow-x-hidden bg-[#f4efe7] text-[#3e4236]">
       {!opened ? (
-        <section className="flex min-h-[100svh] items-center justify-center bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(214,193,154,0.35),transparent_35%),linear-gradient(135deg,#fbf7ef,#e8efe7)] px-5 py-8">
+        <section className="flex min-h-svh items-center justify-center bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(214,193,154,0.35),transparent_35%),linear-gradient(135deg,#fbf7ef,#e8efe7)] px-5 py-8">
           <div
-            className={`w-full max-w-[520px] rounded-[32px] border border-[#d6c19a]/50 bg-[#fffdf7]/90 px-6 py-10 text-center shadow-[0_24px_70px_rgba(63,67,54,0.16)] backdrop-blur-md ${isOpening ? "cover-leaving" : ""
+            className={`w-full max-w-130 rounded-4xl border border-[#d6c19a]/50 bg-[#fffdf7]/90 px-6 py-10 text-center shadow-[0_24px_70px_rgba(63,67,54,0.16)] backdrop-blur-md ${isOpening ? "cover-leaving" : ""
               }`}
           >
             <p className="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-[#5f7464]">
@@ -166,11 +166,11 @@ export default function WeddingInvitationPage() {
               className="group mx-auto block border-0 bg-transparent p-0 disabled:cursor-not-allowed"
             >
               <div
-                className={`envelope relative mx-auto h-[230px] w-[330px] transition duration-300 group-hover:-translate-y-2 group-hover:scale-[1.03] max-[420px]:h-[205px] max-[420px]:w-[285px] ${isOpening ? "envelope-opened" : ""
+                className={`envelope relative mx-auto h-57.5 w-82.5 transition duration-300 group-hover:-translate-y-2 group-hover:scale-[1.03] max-[420px]:h-51.25 max-[420px]:w-71.25 ${isOpening ? "envelope-opened" : ""
                   }`}
               >
-                <div className="envelope-letter absolute left-[35px] right-[35px] top-0 z-[2] flex h-[180px] flex-col items-center justify-center rounded-2xl border border-[#d6c19a]/80 bg-[#fffdf7] px-4 text-center shadow-lg max-[420px]:left-[28px] max-[420px]:right-[28px] max-[420px]:h-[162px]">
-                  <div className="flex h-[80px] w-[80px] items-center justify-center rounded-full border border-[#5f7464]/10 bg-transparent p-0 shadow-none max-[420px]:h-[76px] max-[420px]:w-[76px]">
+                <div className="envelope-letter absolute left-8.75 right-8.75 top-0 z-2 flex h-45 flex-col items-center justify-center rounded-2xl border border-[#d6c19a]/80 bg-[#fffdf7] px-4 text-center shadow-lg max-[420px]:left-7 max-[420px]:right-7 max-[420px]:h-40.5">
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[#5f7464]/10 bg-transparent p-0 shadow-none max-[420px]:h-19 max-[420px]:w-19">
                     <Image
                       src="/logo.png"
                       alt="Wedding logo"
@@ -192,9 +192,9 @@ export default function WeddingInvitationPage() {
                   </p>
                 </div>
 
-                <div className="envelope-body absolute inset-x-0 bottom-0 top-[60px] overflow-hidden rounded-b-[20px] border-2 border-[#5f7464]/30 bg-gradient-to-br from-[#eef5ee] to-white shadow-[0_18px_40px_rgba(63,67,54,0.2)]"></div>
+                <div className="envelope-body absolute inset-x-0 bottom-0 top-15 overflow-hidden rounded-b-5 border-2 border-[#5f7464]/30 bg-linear-to-br from-[#eef5ee] to-white shadow-[0_18px_40px_rgba(63,67,54,0.2)]"></div>
 
-                <div className="envelope-flap absolute inset-x-0 top-[60px] z-[3] h-[132px] border-2 border-[#5f7464]/30 bg-[#dfeadf] transition duration-500"></div>
+                <div className="envelope-flap absolute inset-x-0 top-15 z-3 h-33 border-2 border-[#5f7464]/30 bg-[#dfeadf] transition duration-500"></div>
               </div>
             </button>
 
@@ -202,7 +202,7 @@ export default function WeddingInvitationPage() {
               Tap to Open
             </h1>
 
-            <p className="mx-auto mt-3 max-w-[350px] text-sm leading-6 text-[#74766a]">
+            <p className="mx-auto mt-3 max-w-87.5 text-sm leading-6 text-[#74766a]">
               You are warmly invited to celebrate a beautiful new beginning of
               Tusher & Misu.
             </p>
@@ -210,14 +210,14 @@ export default function WeddingInvitationPage() {
         </section>
       ) : (
         <>
-          <section className="flex min-h-[100svh] items-center bg-[radial-gradient(circle_at_top_right,rgba(220,231,220,0.95),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(214,193,154,0.25),transparent_34%),#f4efe7] px-3 py-3">
-            <div className="mx-auto w-full max-w-[1280px]">
+          <section className="flex min-h-svh items-center bg-[radial-gradient(circle_at_top_right,rgba(220,231,220,0.95),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(214,193,154,0.25),transparent_34%),#f4efe7] px-3 py-3">
+            <div className="mx-auto w-full max-w-7xl">
               <div className="invitation-card card-enter relative w-full overflow-hidden rounded-[26px] border border-[#d6c19a]/50 bg-[#fffdf7]/95 shadow-[0_28px_80px_rgba(63,67,54,0.16)]">
                 <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#dce7dc]/70 blur-sm"></div>
                 <div className="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-[#f2eadb]/70 blur-sm"></div>
 
                 <div className="relative z-10 grid w-full grid-cols-1 gap-3 p-3 xl:grid-cols-[0.9fr_1.1fr] xl:gap-4 xl:p-4">
-                  <div className="left-panel relative flex flex-col justify-center overflow-hidden rounded-[24px] border border-[#d6c19a]/45 bg-white/55 px-5 py-5 text-center xl:min-h-[calc(100svh-72px)]">
+                  <div className="left-panel relative flex flex-col justify-center overflow-hidden rounded-3xl border border-[#d6c19a]/45 bg-white/55 px-5 py-5 text-center xl:min-h-[calc(100svh-72px)]">
                     <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-[#5f7464]/10 bg-transparent p-0 shadow-none">
                       <Image
                         src="/logo.png"
@@ -237,13 +237,13 @@ export default function WeddingInvitationPage() {
                       بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
                     </div>
 
-                    <p className="mx-auto mb-4 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
+                    <p className="mx-auto mb-4 max-w-107.5 text-xs font-bold uppercase leading-5 tracking-wide">
                       “In the name of Allah,
                       <br />
                       the most gracious & the most merciful”
                     </p>
 
-                    <p className="mx-auto mb-3 max-w-[430px] text-xs font-bold uppercase leading-5 tracking-wide">
+                    <p className="mx-auto mb-3 max-w-107.5 text-xs font-bold uppercase leading-5 tracking-wide">
                       We are inviting you to celebrate the wedding ceremony of
                     </p>
 
@@ -265,7 +265,7 @@ export default function WeddingInvitationPage() {
                       Youngest daughter of Md. Mokbul Hossain
                     </p>
 
-                    <div className="mx-auto mt-6 w-full max-w-[520px] rounded-2xl border border-[#d6c19a]/35 bg-[#f8f5ef]/90 px-4 py-3">
+                    <div className="mx-auto mt-6 w-full max-w-130 rounded-2xl border border-[#d6c19a]/35 bg-[#f8f5ef]/90 px-4 py-3">
                       <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#7d8a7a]">
                         Warm Invitation
                       </p>
@@ -276,7 +276,7 @@ export default function WeddingInvitationPage() {
                     </div>
                   </div>
 
-                  <div className="right-panel flex flex-col justify-center rounded-[24px] border border-[#d6c19a]/35 bg-[#fffdf8]/60 px-3 py-3 xl:min-h-[calc(100svh-72px)]">
+                  <div className="right-panel flex flex-col justify-center rounded-3xl border border-[#d6c19a]/35 bg-[#fffdf8]/60 px-3 py-3 xl:min-h-[calc(100svh-72px)]">
                     <div className="mb-3 text-center">
                       <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#7d8a7a]">
                         Celebration Details
@@ -290,7 +290,7 @@ export default function WeddingInvitationPage() {
                       {EVENTS.map((event) => (
                         <div
                           key={event.key}
-                          className="rounded-[20px] border border-[#d6c19a]/40 bg-white/70 p-3 shadow-[0_10px_30px_rgba(63,67,54,0.06)]"
+                          className="rounded-2xl border border-[#d6c19a]/40 bg-white/70 p-3 shadow-[0_10px_30px_rgba(63,67,54,0.06)]"
                         >
                           <div className="flex flex-wrap items-start justify-between gap-3">
                             <div>
