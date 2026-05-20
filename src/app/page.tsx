@@ -151,9 +151,8 @@ export default function WeddingInvitationPage() {
       {!opened ? (
         <section className="flex min-h-[100svh] items-center justify-center bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.95),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(214,193,154,0.35),transparent_35%),linear-gradient(135deg,#fbf7ef,#e8efe7)] px-5 py-8">
           <div
-            className={`w-full max-w-[520px] rounded-[32px] border border-[#d6c19a]/50 bg-[#fffdf7]/90 px-6 py-10 text-center shadow-[0_24px_70px_rgba(63,67,54,0.16)] backdrop-blur-md ${
-              isOpening ? "cover-leaving" : ""
-            }`}
+            className={`w-full max-w-[520px] rounded-[32px] border border-[#d6c19a]/50 bg-[#fffdf7]/90 px-6 py-10 text-center shadow-[0_24px_70px_rgba(63,67,54,0.16)] backdrop-blur-md ${isOpening ? "cover-leaving" : ""
+              }`}
           >
             <p className="mb-5 text-xs font-bold uppercase tracking-[0.35em] text-[#5f7464]">
               Wedding Invitation
@@ -167,9 +166,8 @@ export default function WeddingInvitationPage() {
               className="group mx-auto block border-0 bg-transparent p-0 disabled:cursor-not-allowed"
             >
               <div
-                className={`envelope relative mx-auto h-[230px] w-[330px] transition duration-300 group-hover:-translate-y-2 group-hover:scale-[1.03] max-[420px]:h-[205px] max-[420px]:w-[285px] ${
-                  isOpening ? "envelope-opened" : ""
-                }`}
+                className={`envelope relative mx-auto h-[230px] w-[330px] transition duration-300 group-hover:-translate-y-2 group-hover:scale-[1.03] max-[420px]:h-[205px] max-[420px]:w-[285px] ${isOpening ? "envelope-opened" : ""
+                  }`}
               >
                 <div className="envelope-letter absolute left-[35px] right-[35px] top-0 z-[2] flex h-[180px] flex-col items-center justify-center rounded-2xl border border-[#d6c19a]/80 bg-[#fffdf7] px-4 text-center shadow-lg max-[420px]:left-[28px] max-[420px]:right-[28px] max-[420px]:h-[162px]">
                   <div className="flex h-[80px] w-[80px] items-center justify-center rounded-full border border-[#5f7464]/10 bg-transparent p-0 shadow-none max-[420px]:h-[76px] max-[420px]:w-[76px]">
@@ -190,7 +188,7 @@ export default function WeddingInvitationPage() {
                   </p>
 
                   <p className="name-text mt-1 text-[28px] leading-none text-[#5f7464] max-[420px]:text-[24px]">
-                    Misu & Tusher
+                    Tusher & Misu
                   </p>
                 </div>
 
@@ -206,7 +204,7 @@ export default function WeddingInvitationPage() {
 
             <p className="mx-auto mt-3 max-w-[350px] text-sm leading-6 text-[#74766a]">
               You are warmly invited to celebrate a beautiful new beginning of
-              Misu & Tusher.
+              Tusher & Misu.
             </p>
           </div>
         </section>
@@ -249,22 +247,22 @@ export default function WeddingInvitationPage() {
                       We are inviting you to celebrate the wedding ceremony of
                     </p>
 
-                    <h2 className="name-text mx-auto max-w-full text-[30px] leading-[1.08] text-[#43463d] sm:text-[36px] xl:whitespace-nowrap xl:text-[40px]">
-                      Marufa Yeasmin Misu
-                    </h2>
-
-                    <p className="mt-1.5 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
-                      Youngest daughter of Md. Mokbul Hossain
-                    </p>
-
-                    <div className="my-2 text-[28px] text-[#5f7464]">&</div>
-
                     <h2 className="name-text mx-auto max-w-full text-[28px] leading-[1.08] text-[#43463d] sm:text-[34px] xl:whitespace-nowrap xl:text-[38px]">
                       Md Taufik Hasan Tusher
                     </h2>
 
                     <p className="mt-1.5 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
                       Elder son of A.H.M Saiful Islam
+                    </p>
+
+                    <div className="my-2 text-[28px] text-[#5f7464]">&</div>
+
+                    <h2 className="name-text mx-auto max-w-full text-[30px] leading-[1.08] text-[#43463d] sm:text-[36px] xl:whitespace-nowrap xl:text-[40px]">
+                      Marufa Yeasmin Misu
+                    </h2>
+
+                    <p className="mt-1.5 text-[10px] font-extrabold uppercase tracking-wide sm:text-[11px]">
+                      Youngest daughter of Md. Mokbul Hossain
                     </p>
 
                     <div className="mx-auto mt-6 w-full max-w-[520px] rounded-2xl border border-[#d6c19a]/35 bg-[#f8f5ef]/90 px-4 py-3">
@@ -297,11 +295,10 @@ export default function WeddingInvitationPage() {
                           <div className="flex flex-wrap items-start justify-between gap-3">
                             <div>
                               <span
-                                className={`inline-flex rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] ${
-                                  event.key === "wedding"
+                                className={`inline-flex rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] ${event.key === "wedding"
                                     ? "bg-[#edf3eb] text-[#5f7464]"
                                     : "bg-[#f7efe6] text-[#8b6c54]"
-                                }`}
+                                  }`}
                               >
                                 {event.badge}
                               </span>
