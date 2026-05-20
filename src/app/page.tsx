@@ -370,9 +370,9 @@ export default function WeddingInvitationPage() {
 
                         <a
                           href="tel:+8801701030436"
-                          className="mt-1 inline-block text-base font-extrabold text-[#3e4236] no-underline sm:text-lg"
+                          className="mt-1 inline-block text-base font-semibold text-[#3e4236] no-underline sm:text-lg"
                         >
-                          +8801701030436
+                          +8801701030436, +8801644670226
                         </a>
                       </div>
 
